@@ -1,0 +1,50 @@
+body {
+  background-color: #e1e1e1;
+  color: black;
+  padding: 0;
+  margin: 0;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  color: black;
+}
+
+.navbar {
+  background-color: #ff971f;
+}
+
+.nav {
+  padding: 0 8px;
+  margin: 0;
+  list-style-type: none;
+  overflow: hidden;
+}
+.nav .nav-item {
+  float: left;
+}
+.nav .nav-item .nav-link {
+  display: block;
+  padding: 14px 16px;
+  text-align: center;
+}
+.nav .nav-item .nav-link:hover {
+  background-color: red;
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .nav .nav-item {
+    float: none;
+  }
+}
+.container {
+  padding: 1.5em;
+  margin: 0 10em;
+  background-color: white;
+}
+
+/*# sourceMappingURL=main.css.map */

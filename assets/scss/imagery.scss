@@ -1,0 +1,72 @@
+//Variables
+$body-bg: rgb(225,225,225);
+$body-color: black;
+
+$primary: rgb(255, 151, 31);
+$secondary: red;
+
+//mixins
+@mixin size_contain {
+    padding: 0;
+    margin: 0;
+}
+
+//initial
+body {
+    background-color: $body-bg;
+    color: $body-color;
+    @include size_contain();
+}
+
+a {
+    &:link {
+        text-decoration: none;
+        color: black;
+    }
+    &:visited {
+        color: black;
+    }
+}
+
+//navbar
+.navbar {
+    background-color: $primary;
+}
+
+//nav
+.nav {
+    padding: 0 8px;
+    margin: 0;
+    list-style-type: none;
+    overflow: hidden;
+
+    .nav-item {
+        float: left;
+        
+        .nav-link {
+            display: block;
+            padding: 14px 16px;
+            text-align: center;
+
+            &:hover {
+                background-color: $secondary;
+                color: white;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav {
+        .nav-item {
+            float: none;
+        }
+    }
+}
+
+//container
+.container {
+    padding: 1.5em;
+    margin: 0 10em;
+    background-color: white;
+}
