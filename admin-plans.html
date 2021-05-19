@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Imagery CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <title>Imagery</title>
+  </head>
+  <body>
+
+  <nav class="navbar">
+      <ul class="nav">
+          <li class="nav-item">
+            <a href="#" onclick="open_nav()" class="nav-link toggler">Menu</a>
+            <a href="#" onclick="open_nav_sm()" class="nav-link toggler-sm">Menu</a>
+          </li>
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      </ul>
+  </nav>
+
+  <div class="layout">
+    <div class="side-navbar">
+        <ul class="vnav">
+            <li class="nav-item"><a href="admin.html" class="nav-link">Dashboard</a></li>
+            <li class="nav-item"><a href="admin-sales.html" class="nav-link">Sales</a></li>
+            <li class="nav-item"><a href="admin-plans.html" class="nav-link">Plans</a></li>
+        </ul>
+    </div>
+    <div class="main">
+      <h1>Plans</h1>
+      <button class="btn" data-toggle="modal" data-target="#modal">Add Plan</button>
+        <div class="modal" id="modal">
+            <div class="dialog">
+                <div class="header"><button class="btn close" data-target="#modal">Close</button></div>
+                <div class="body">
+
+                    <div class="card">
+                        <div class="body">
+                            <form method="post">
+                                <input type="hidden" name="type" value="add_plan">
+                                <div class="input-group">
+                                    <label>Description</label>
+                                    <input type="text" class="form-control" placeholder="Enter the transaction ID here" required>
+                                </div>
+                                <div class="input-group">
+                                    <input type="file" name="picture" class="form-control" required>
+                                </div>
+                                <input type="submit" class="btn form-control" value="Submit"> 
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+      
+      <hr>
+
+      <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>This is a plan description</td>
+            <td>
+                <a href="">Delete</a>
+                <a href="admin-plan.html">Edit</a>
+            </td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>This is a plan description</td>
+            <td>
+                <a href="">Delete</a>
+                <a href="admin-plan.html">Edit</a>
+            </td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>This is a plan description</td>
+            <td>
+                <a href="">Delete</a>
+                <a href="admin-plan.html">Edit</a>
+            </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+    <footer>
+      <h2>Social Links</h2>
+      <a href="#" class="btn">Facebook</a>
+      <a href="#" class="btn">Tweeter</a>
+      <a href="#" class="btn">YouTube</a>
+      <div class="bar">
+        &copy; Imagery 2021, proudly designed by <a href="https://linkedin.com/in/fshangala">fshangala</a>
+      </div>
+    </footer>
+
+    <!--Imagery javascript-->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

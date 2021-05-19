@@ -3,19 +3,43 @@ $body-bg: rgb(225,225,225);
 $body-color: black;
 
 $primary: rgb(255, 151, 31);
-$secondary: red;
+$secondary: rgb(255, 253, 145);
+$danger: red;
 
+$breakpoint: 600px;
+$rounded: 10px;
 //mixins
 @mixin size_contain {
     padding: 0;
     margin: 0;
 }
 
+@mixin shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@mixin btn_danger {
+    background-color: $danger;
+    color: white;
+    &:hover {
+        background-color: $primary;
+        color: white !important;
+    }
+}
+//utilities
+.mt-0 {
+    margin-top: 0;
+}
 //initial
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: $body-bg;
     color: $body-color;
     @include size_contain();
+    font-size: 20px;;
 }
 
 a {
@@ -26,6 +50,10 @@ a {
     &:visited {
         color: black;
     }
+}
+
+img {
+    width: 100%;
 }
 
 //navbar
@@ -47,19 +75,68 @@ a {
             display: block;
             padding: 14px 16px;
             text-align: center;
+            color: white;
 
             &:hover {
-                background-color: $secondary;
-                color: white;
+                color: $secondary;
+                font-weight: 700;
             }
         }
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: $breakpoint) {
     .nav {
         .nav-item {
             float: none;
+        }
+    }
+}
+//side-nav
+.side-navbar {
+    width: 25%;
+    height: 100%;
+    background-color: $secondary;
+    position: absolute;
+    overflow: auto;
+}
+
+.toggler {
+    display: block;
+}
+.toggler-sm {
+    display: none !important;
+}
+
+@media  screen and (max-width: $breakpoint) {
+    .side-navbar {
+        width: 100% !important;
+        position: relative !important;
+        display: none;
+    }
+    .toggler {
+        display: none !important;
+    }
+    .toggler-sm {
+        display: block !important;
+    }
+}
+
+//vnav
+.vnav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    .nav-item {
+        .nav-link {
+            display: block;
+            padding: 14px 16px;
+            color: black;
+            &:hover {
+                background-color: $primary;
+                color: $secondary;
+            }
         }
     }
 }
@@ -68,5 +145,242 @@ a {
 .container {
     padding: 1.5em;
     margin: 0 10em;
+}
+
+.main {
+    padding: 1.5em;
+    margin-left: 25%;
     background-color: white;
+    transition: margin-left 0.5s;
+}
+
+.layout {
+    position: relative;
+}
+
+@media screen and (max-width: $breakpoint) {
+    .container {
+        margin: 0;
+        padding: 1.2em;
+    }
+
+    .main {
+        margin-left: 0%;
+        padding: 1.2em;
+    }
+}
+
+//row
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    flex-wrap: wrap;
+    vertical-align: middle;
+
+    .col {
+        width: 32%;
+        display: inline-block;
+        padding: 0.1em;
+
+        .card {
+            .body {
+                p {
+                    height: 1em;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint){
+    .row {
+        .col {
+            width: 48%;
+            .card {
+                .body {
+                    p {
+                        height: 2em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//card
+.card {
+    width: 100%;
+    background-color: white;
+    border-radius: $rounded;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+
+    .body {
+        padding: 0.2em;
+    }
+}
+
+@media screen and (max-width: $breakpoint){
+    .card {
+        .body {
+            p {
+                height: 2em;
+            }
+        }
+    }
+}
+
+//button
+.btn {
+    background-color: $primary;
+    border: 1px solid $primary;
+    color: white !important;
+    text-align: center;
+    padding: 0.4em;
+    border-radius: $rounded;
+    
+    &:hover {
+        background-color: white;
+        color: $primary !important;
+    }
+}
+
+.btn-group {
+    border-radius: $rounded;
+    overflow: hidden;
+    border: 1px solid $primary;
+    .btn {
+        border-radius: 0%;
+        width: 100% !important;
+        border: none;
+        display: block;
+    }
+}
+
+//close buttons
+.close {
+    @include btn_danger();
+}
+
+//modal
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+    .dialog {
+        width: 50%;
+        background-color: white;
+        border-radius: $rounded;
+        @include shadow();
+
+        .header {
+            .close {
+                float: right;
+            }
+        }
+
+        .body {
+            padding: 0.2em;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint) {
+    .modal {
+        .dialog {
+            width: 100%;
+        }
+    }
+}
+
+//list
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+//form
+form {
+    .input-group {
+        label {
+            font-weight: 700;
+        }
+        margin: 0.5em;
+    }
+}
+
+.form-control {
+    width: 100%;
+    border: {
+        top: none;
+        left: none;
+        right: none;
+        bottom: 1px solid $primary;
+    }
+    padding: 0.5em;
+
+    &:focus {
+        bottom: 1px solid $primary !important;
+    }
+    &:hover {
+        border: 1px solid $primary !important;
+    }
+}
+
+//Table
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    th {
+        text-align: left;
+        background-color: $primary;
+        color: white;
+    }
+    td {
+        border: 1px solid $primary;
+    }
+    tr { 
+        &:nth-child(even){
+            background-color: $secondary;
+        }
+    }
+}
+
+//footer
+footer {
+    background-color: $secondary;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid $primary;
+
+    .footer-heading {
+        padding: 0;
+    }
+    .bar {
+        background-color: $primary;
+        color: white;
+        text-align: center;
+    }
+    .btn {
+        &:hover {
+            background-color: $primary;
+            color: $secondary !important;
+        }
+    }
 }

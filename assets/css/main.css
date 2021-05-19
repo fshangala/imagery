@@ -1,8 +1,17 @@
+.mt-0 {
+  margin-top: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #e1e1e1;
   color: black;
   padding: 0;
   margin: 0;
+  font-size: 20px;
 }
 
 a:link {
@@ -11,6 +20,10 @@ a:link {
 }
 a:visited {
   color: black;
+}
+
+img {
+  width: 100%;
 }
 
 .navbar {
@@ -30,10 +43,11 @@ a:visited {
   display: block;
   padding: 14px 16px;
   text-align: center;
+  color: white;
 }
 .nav .nav-item .nav-link:hover {
-  background-color: red;
-  color: white;
+  color: #fffd91;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 600px) {
@@ -41,10 +55,249 @@ a:visited {
     float: none;
   }
 }
+.side-navbar {
+  width: 25%;
+  height: 100%;
+  background-color: #fffd91;
+  position: absolute;
+  overflow: auto;
+}
+
+.toggler {
+  display: block;
+}
+
+.toggler-sm {
+  display: none !important;
+}
+
+@media screen and (max-width: 600px) {
+  .side-navbar {
+    width: 100% !important;
+    position: relative !important;
+    display: none;
+  }
+
+  .toggler {
+    display: none !important;
+  }
+
+  .toggler-sm {
+    display: block !important;
+  }
+}
+.vnav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.vnav .nav-item .nav-link {
+  display: block;
+  padding: 14px 16px;
+  color: black;
+}
+.vnav .nav-item .nav-link:hover {
+  background-color: #ff971f;
+  color: #fffd91;
+}
+
 .container {
   padding: 1.5em;
   margin: 0 10em;
+}
+
+.main {
+  padding: 1.5em;
+  margin-left: 25%;
   background-color: white;
+  transition: margin-left 0.5s;
+}
+
+.layout {
+  position: relative;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin: 0;
+    padding: 1.2em;
+  }
+
+  .main {
+    margin-left: 0%;
+    padding: 1.2em;
+  }
+}
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+  flex-wrap: wrap;
+  vertical-align: middle;
+}
+.row .col {
+  width: 32%;
+  display: inline-block;
+  padding: 0.1em;
+}
+.row .col .card .body p {
+  height: 1em;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .row .col {
+    width: 48%;
+  }
+  .row .col .card .body p {
+    height: 2em;
+  }
+}
+.card {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+}
+.card .body {
+  padding: 0.2em;
+}
+
+@media screen and (max-width: 600px) {
+  .card .body p {
+    height: 2em;
+  }
+}
+.btn {
+  background-color: #ff971f;
+  border: 1px solid #ff971f;
+  color: white !important;
+  text-align: center;
+  padding: 0.4em;
+  border-radius: 10px;
+}
+.btn:hover {
+  background-color: white;
+  color: #ff971f !important;
+}
+
+.btn-group {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ff971f;
+}
+.btn-group .btn {
+  border-radius: 0%;
+  width: 100% !important;
+  border: none;
+  display: block;
+}
+
+.close {
+  background-color: red;
+  color: white;
+}
+.close:hover {
+  background-color: #ff971f;
+  color: white !important;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.modal .dialog {
+  width: 50%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.modal .dialog .header .close {
+  float: right;
+}
+.modal .dialog .body {
+  padding: 0.2em;
+}
+
+@media screen and (max-width: 600px) {
+  .modal .dialog {
+    width: 100%;
+  }
+}
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+form .input-group {
+  margin: 0.5em;
+}
+form .input-group label {
+  font-weight: 700;
+}
+
+.form-control {
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #ff971f;
+  padding: 0.5em;
+}
+.form-control:focus {
+  bottom: 1px solid #ff971f !important;
+}
+.form-control:hover {
+  border: 1px solid #ff971f !important;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th {
+  text-align: left;
+  background-color: #ff971f;
+  color: white;
+}
+.table td {
+  border: 1px solid #ff971f;
+}
+.table tr:nth-child(even) {
+  background-color: #fffd91;
+}
+
+footer {
+  background-color: #fffd91;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #ff971f;
+}
+footer .footer-heading {
+  padding: 0;
+}
+footer .bar {
+  background-color: #ff971f;
+  color: white;
+  text-align: center;
+}
+footer .btn:hover {
+  background-color: #ff971f;
+  color: #fffd91 !important;
 }
 
 /*# sourceMappingURL=main.css.map */
