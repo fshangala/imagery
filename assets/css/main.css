@@ -102,6 +102,42 @@ img {
   color: #fffd91;
 }
 
+.slider {
+  overflow: hidden;
+  position: relative;
+}
+.slider .slick-prev {
+  position: absolute;
+  z-index: 50;
+  top: 50%;
+  left: 0;
+}
+.slider .slick-next {
+  position: absolute;
+  z-index: 50;
+  top: 50%;
+  right: 0;
+}
+.slider .slick-dots {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+.slider .slick-dots .slick-active button {
+  border: 1px solid #ff971f;
+  color: #ff971f !important;
+  background-color: white;
+}
+
+.slick-slide {
+  margin: 0.5em;
+}
+
 .container {
   padding: 1.5em;
   margin: 0 10em;
@@ -173,7 +209,7 @@ img {
     height: 2em;
   }
 }
-.btn {
+.btn, .slider .slick-prev, .slider .slick-next, .slider .slick-dots li button {
   background-color: #ff971f;
   border: 1px solid #ff971f;
   color: white !important;
@@ -181,7 +217,7 @@ img {
   padding: 0.4em;
   border-radius: 10px;
 }
-.btn:hover {
+.btn:hover, .slider .slick-prev:hover, .slider .slick-next:hover, .slider .slick-dots li button:hover {
   background-color: white;
   color: #ff971f !important;
 }
@@ -191,7 +227,7 @@ img {
   overflow: hidden;
   border: 1px solid #ff971f;
 }
-.btn-group .btn {
+.btn-group .btn, .btn-group .slider .slick-prev, .slider .btn-group .slick-prev, .btn-group .slider .slick-next, .slider .btn-group .slick-next, .btn-group .slider .slick-dots li button, .slider .slick-dots li .btn-group button {
   border-radius: 0%;
   width: 100% !important;
   border: none;
@@ -295,7 +331,7 @@ footer .bar {
   color: white;
   text-align: center;
 }
-footer .btn:hover {
+footer .btn:hover, footer .slider .slick-prev:hover, .slider footer .slick-prev:hover, footer .slider .slick-next:hover, .slider footer .slick-next:hover, footer .slider .slick-dots li button:hover, .slider .slick-dots li footer button:hover {
   background-color: #ff971f;
   color: #fffd91 !important;
 }

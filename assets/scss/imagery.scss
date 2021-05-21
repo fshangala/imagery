@@ -141,6 +141,52 @@ img {
     }
 }
 
+//slider
+.slider {
+    overflow: hidden;
+    position: relative;
+    .slick-prev {
+        @extend .btn;
+        position: absolute;
+        z-index: 50;
+        top: 50%;
+        left: 0;
+    }
+    .slick-next {
+        @extend .btn;
+        position: absolute;
+        z-index: 50;
+        top: 50%;
+        right: 0;
+    }
+    .slick-dots {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+
+        li {
+            button {
+                @extend .btn;
+            }
+        }
+        .slick-active {
+            button {
+                border: 1px solid $primary;
+                color: $primary !important;
+                background-color: white;
+            }
+        }
+    }
+}
+.slick-slide {
+    margin: 0.5em;
+}
+
 //container
 .container {
     padding: 1.5em;
