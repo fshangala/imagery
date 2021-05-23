@@ -7,6 +7,11 @@
 
     <!-- Imagery CSS -->
     <link href="assets/css/main.css" rel="stylesheet">
+    
+    <!--JQuery javascript-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!--Slick javascript-->
+    <script src="assets/slick/slick.min.js"></script>
 
     <title>Imagery</title>
   </head>
@@ -31,7 +36,7 @@
 
       <center><h1>Featured Plans</h1></center>
       
-      <div class="row">
+      <div class="row" id="all-plans">
         
         <div class="col"> 
           <div class="card">
@@ -70,6 +75,8 @@
         </div>
 
       </div>
+      <br>
+      <center><a href="plans.html" class="btn" style="width:100%;">View more</a></center>
 
       <div class="modal" id="modal">
         <div class="dialog">
@@ -103,6 +110,87 @@
       </div>
 
     </div>
+    <script>
+    function render_slides(slides){
+      var slider = document.querySelector(".slider");
+      //$(slider).slick("unslick");
+      $(slider).html("");
+      for(var i=0;i<slides.length;i++){
+        var img = new Image();
+        img.src = slides[i].picture;
+        slider.append(img);
+      }
+      $(".slider").slick({
+          infinity: true,
+          dots: true,
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplay: true,
+          speed: 500,
+          responsive: [
+              {
+                  breakpoint: 600,
+                  settings: {
+                      slidesToShow: 1,
+                      slidesToScroll: 1
+                  }
+              }
+          ]
+      });
+      $(".slick-prev").html("<");
+      $(".slick-next").html(">");
+    }
+    function get_slides(){
+      $.get("/api/plan.php?type=all_slide", (data)=>{
+        render_slides(data);
+      });
+    }
+    get_slides();
+    
+    var plans;
+    function render_plans(allplans){
+      try {
+        var el = document.querySelector("#all-plans");
+        el.innerHTML = "";
+        for(var i=0;i<allplans.length;i++){
+          var col = document.createElement("div");
+          col.classList.add("col");
+          var card = document.createElement("div");
+          card.classList.add("card");
+          var img = new Image();
+          img.src = allplans[i].picture;
+          card.append(img);
+          var body = document.createElement("div");
+          body.classList.add("body");
+          var p = document.createElement("p");
+          p.innerHTML = allplans[i].description;
+          body.append(p);
+          var btn_group = document.createElement("div");
+          btn_group.classList.add("btn-group");
+          var btn = document.createElement("a");
+          btn.classList.add("btn");
+          btn.setAttribute("href", "plan.html?id="+allplans[i].id);
+          btn.innerHTML = "K"+allplans[i].price+" - View";
+          btn_group.append(btn);
+          body.append(btn_group);
+          card.append(body);
+          col.append(card);
+          el.append(col);
+        }
+      } catch(error){
+        alert(error.message);
+      }
+    }
+    function get_plans(){
+      $.get("/api/plan.php?type=all", (data, status)=>{
+        plans = data;
+        render_plans(plans.slice(0,10));
+      });
+    }
+    $(document).ready(()=>{
+      get_plans();
+    });
+    </script>
 
     <footer>
       <h2 class="footer-heading">Social Links</h2>
@@ -114,10 +202,6 @@
       </div>
     </footer>
 
-    <!--JQuery javascript-->
-    <script src="assets/js/jquery.min.js"></script>
-    <!--Slick javascript-->
-    <script src="assets/slick/slick.min.js"></script>
     <!--Imagery javascript-->
     <script src="assets/js/main.js"></script>
   </body>

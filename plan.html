@@ -8,6 +8,11 @@
     <!-- Imagery CSS -->
     <link href="assets/css/main.css" rel="stylesheet">
 
+    <!--JQuery javascript-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!--Slick javascript-->
+    <script src="assets/slick/slick.min.js"></script>
+
     <title>Imagery</title>
   </head>
   <body>
@@ -22,16 +27,12 @@
     <div class="container">
         
         <div class="card">
-            <img src="assets/images/sunset-in-the-mountains.png">
+            <img id="plan-picture" src="assets/images/sunset-in-the-mountains.png">
             <div class="body">
-                <p>House Plan description goes here</p>
+              <h3 id="plan-price"></h3>
+                <p id="plan-description">House Plan description goes here</p>
 
-                <ul class="list">
-                    <li class="item">house plan attributes</li>
-                    <li class="item">house plan attributes</li>
-                    <li class="item">house plan attributes</li>
-                    <li class="item">house plan attributes</li>
-                </ul>
+                <ul class="list" id="plan-attributes"></ul>
 
                 <div class="row">
                     <div class="col">
@@ -50,17 +51,22 @@
 
             <div class="card">
               <div class="body">
-                <center>Send ZMW 500 to 0977342255</center>
-                <form>
-                    <input type="hidden" name="product_id" value="1">
+                <center>Airtel Money Payment</center>
+                <form action="/api/sale.php" method="post">
+                    <input type="hidden" name="type" value="buy">
+                    <input type="hidden" class="input-plan-id" name="plan_id" required>
+                    <div class="input-group">
+                        <label>Phone</label>
+                        <input type="text" name="alt_phone" class="form-control" placeholder="Enter your phone number here" required>
+                    </div>
                     <div class="input-group">
                         <label>Transaction ID</label>
-                        <input type="text" class="form-control" placeholder="Enter the transaction ID here" required>
+                        <input type="text" name="txnid" class="form-control" placeholder="Enter the transaction ID here" required>
                     </div>
                     <input type="submit" class="btn form-control" value="Submit"> 
                 </form>
                 <p>
-                    Make a payment to <b>0977324333</b> and enter the Transaction ID  above.
+                    Make a payment to <b>0978310632</b> and enter the Transaction ID  above.
                 </p>
               </div>
             </div>
@@ -69,7 +75,99 @@
         </div>
       </div>
 
+      <div class="row" id="plan-pictures"></div>
+
     </div>
+    <script>
+    var plan_id = 0;
+    var url = location.search;
+    var paramstr = url.substring(1);
+    var paramarr = paramstr.split("&");
+    for(var i=0;i<paramarr.length;i++){
+      var arr = paramarr[i].split("=");
+      if(arr[0] == "id"){
+        plan_id = arr[1];
+      }
+    }
+    if(plan_id == 0){
+      alert("No plan to view! Navigating to plans page.");
+      location.assign("plans.html");
+    }
+
+    $(document).ready(()=>{
+      function render_plan_attributes(attributes){
+        var list = document.querySelector("#plan-attributes");
+        for(var i = 0; i < attributes.length; i++){
+          var li = document.createElement("li");
+          li.classList.add("item");
+          li.innerHTML = attributes[i].value;
+          list.append(li);
+        }
+      }
+      function get_plan_attributes(plan){
+        $.get("/api/plan.php?type=all_attribute&plan_id="+plan.id, (data)=>{
+          render_plan_attributes(data);
+        });
+      }
+
+      function render_plan_files(files){
+        var table = document.querySelector("#plan-files");
+        for(var i=0;i<files.length;i++){
+          var tr = document.createElement("tr");
+          var td1 = document.createElement("td");
+          $(td1).text(files[i].id);
+          tr.append(td1);
+          var td2 = document.createElement("td");
+          $(td2).text(files[i].file);
+          tr.append(td2);
+          var td3 = document.createElement("td");
+          $(td3).html("<a href='/api/plan.php?type=delete_file&file_id="+files[i].id+"'>Delete</a>");
+          tr.append(td3);
+
+          table.append(tr);
+        }
+      }
+      function get_plan_files(plan){
+        $.get("/api/plan.php?type=all_file&plan_id="+plan.id, (data)=>{
+          render_plan_files(data);
+        });
+      }
+
+      function render_plan_pictures(pictures){
+        var container = document.querySelector("#plan-pictures");
+        for(var i=0;i<pictures.length;i++){
+          var div = document.createElement("div");
+          div.classList.add("col");
+          var img = new Image();
+          img.src=pictures[i].picture;
+          div.append(img);
+          container.append(div);
+        }
+      }
+      function get_plan_pictures(plan){
+        $.get("/api/plan.php?type=all_picture&plan_id="+plan.id, (data)=>{
+          render_plan_pictures(data);
+        });
+      }
+
+      function render_plan(plan){
+        document.querySelector("#plan-picture").src = plan.picture;
+        $("#plan-description").html(plan.description);
+        $("#plan-price").html("<b>K"+plan.price+"</b>");
+        $(".input-plan-id").val(plan.id);
+        $(".text-plan-id").text(plan.id);
+
+        get_plan_attributes(plan);
+        //get_plan_files(plan);
+        get_plan_pictures(plan);
+      }
+
+      $.get("/api/plan.php?type=single&id="+plan_id, (data)=>{
+        plan = data;
+        render_plan(plan);
+      });
+    });
+    </script>
 
     <footer>
       <h2>Social Links</h2>

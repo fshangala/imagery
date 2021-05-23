@@ -1,24 +1,3 @@
-//Slick
-$(".slider").slick({
-    infinity: true,
-    dots: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 500,
-    responsive: [
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }
-    ]
-});
-$(".slick-prev").html("<");
-$(".slick-next").html(">");
-
 //side-nav
 function open_nav(){
     var nav = document.querySelector(".side-navbar");

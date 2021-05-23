@@ -8,6 +8,11 @@
     <!-- Imagery CSS -->
     <link href="assets/css/main.css" rel="stylesheet">
 
+    <!--JQuery javascript-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!--Slick javascript-->
+    <script src="assets/slick/slick.min.js"></script>
+
     <title>Imagery</title>
   </head>
   <body>
@@ -21,7 +26,7 @@
 
     <div class="container">
         
-      <div class="row">
+      <div class="row" id="all-plans">
 
         <div class="col">
           <div class="card">
@@ -61,6 +66,53 @@
 
       </div>
     </div>
+
+    <script>
+    
+    var plans;
+    $(document).ready(()=>{
+      function render_plans(allplans){
+        try {
+          var el = document.querySelector("#all-plans");
+          el.innerHTML = "";
+          for(var i=0;i<allplans.length;i++){
+            var col = document.createElement("div");
+            col.classList.add("col");
+            var card = document.createElement("div");
+            card.classList.add("card");
+            var img = new Image();
+            img.src = allplans[i].picture;
+            card.append(img);
+            var body = document.createElement("div");
+            body.classList.add("body");
+            var p = document.createElement("p");
+            p.innerHTML = allplans[i].description;
+            body.append(p);
+            var btn_group = document.createElement("div");
+            btn_group.classList.add("btn-group");
+            var btn = document.createElement("a");
+            btn.classList.add("btn");
+            btn.setAttribute("href", "plan.html?id="+allplans[i].id);
+            btn.innerHTML = "K"+allplans[i].price+" - View";
+            btn_group.append(btn);
+            body.append(btn_group);
+            card.append(body);
+            col.append(card);
+            el.append(col);
+          }
+        } catch(error){
+          alert(error.message);
+        }
+      }
+      function get_plans(){
+        $.get("/api/plan.php?type=all", (data)=>{
+          plans = data;
+          render_plans(plans);
+        });
+      }
+      get_plans();
+    });
+    </script>
 
     <footer>
       <h2>Social Links</h2>

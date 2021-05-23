@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Imagery CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <!--JQuery javascript-->
+    <script src="assets/js/jquery.min.js"></script>
+
+    <title>Imagery</title>
+  </head>
+  <body>
+
+  <nav class="navbar">
+      <ul class="nav">
+          <li class="nav-item">
+            <a href="#" onclick="open_nav()" class="nav-link toggler">Menu</a>
+            <a href="#" onclick="open_nav_sm()" class="nav-link toggler-sm">Menu</a>
+          </li>
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      </ul>
+  </nav>
+
+  <div class="layout">
+    <div class="side-navbar">
+        <ul class="vnav">
+            <li class="nav-item"><a href="admin.html" class="nav-link">Dashboard</a></li>
+            <li class="nav-item"><a href="admin-sales.html" class="nav-link">Sales</a></li>
+            <li class="nav-item"><a href="admin-plans.html" class="nav-link">Plans</a></li>
+            <li class="nav-item"><a href="admin-slide.html" class="nav-link">Slides</a></li>
+        </ul>
+    </div>
+    <div class="main">
+
+      <h1>Slide</h1>
+      <button class="btn" data-toggle="modal" data-target="#add-slide">Add Slide</button>
+      
+      <div class="modal" id="add-slide">
+        <div class="dialog">
+          <div class="header"><button class="btn close" data-target="#add-slide">Close</button></div>
+          <div class="body">
+
+            <div class="card">
+              <div class="body">
+
+                <form action="api/plan.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="type" value="add_slide">
+                    <div class="input-group">
+                        <label>Add picture</label>
+                        <input type="file" class="form-control" name="picture" required>
+                    </div>
+                    <input type="submit" class="btn form-control" value="Submit"> 
+                </form>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row" id="all-slides">
+        <div class="col">
+            <div class="card">
+                <img src="assets/images/sunset-in-the-mountains.png">
+                <div class="body">
+                    <center><a href=#>Delete</a></center>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="assets/images/sunset-in-the-mountains.png">
+                <div class="body">
+                    <center><a href=#>Delete</a></center>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="assets/images/sunset-in-the-mountains.png">
+                <div class="body">
+                    <center><a href=#>Delete</a></center>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+    <script>
+    
+    var slides;
+    $(document).ready(()=>{
+      function render_slides(allslides){
+        try {
+          var el = document.querySelector("#all-slides");
+          el.innerHTML = "";
+          for(var i=0;i<allslides.length;i++){
+            var col = document.createElement("div");
+            col.classList.add("col");
+            var card = document.createElement("div");
+            card.classList.add("card");
+            var img = new Image();
+            img.src = allslides[i].picture;
+            card.append(img);
+            var body = document.createElement("div");
+            body.classList.add("body");
+            body.innerHTML = "<center><a href='/api/plan.php?type=delete_slide&slide_id="+allslides[i].id+"'>Delete</a></center>";
+            card.append(body);
+            col.append(card);
+            el.append(col);
+          }
+        } catch(error){
+          alert(error.message);
+          console.log(error);
+        }
+      }
+      function get_slides(){
+        $.get("/api/plan.php?type=all_slide", (data)=>{
+          slides = data;
+          render_slides(slides);
+        });
+      }
+      get_slides();
+    });
+    </script>
+
+    <footer>
+      <h2>Social Links</h2>
+      <a href="#" class="btn">Facebook</a>
+      <a href="#" class="btn">Tweeter</a>
+      <a href="#" class="btn">YouTube</a>
+      <div class="bar">
+        &copy; Imagery 2021, proudly designed by <a href="https://linkedin.com/in/fshangala">fshangala</a>
+      </div>
+    </footer>
+
+    <!--Slick javascript-->
+    <script src="assets/slick/slick.min.js"></script>
+    <!--Imagery javascript-->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="793.70081"
+   height="1122.5197"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"
+   sodipodi:docname="learning.svg">
+  <defs
+     id="defs2">
+    <rect
+       x="191.25595"
+       y="250.22024"
+       width="47.625"
+       height="81.642857"
+       id="rect937" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="493.94715"
+     inkscape:cy="502.44093"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     borderlayer="false"
+     showborder="false"
+     inkscape:pagecheckerboard="true"
+     units="px"
+     inkscape:window-width="1280"
+     inkscape:window-height="747"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#2b0000;stroke-width:0.264583"
+       id="rect893"
+       width="542.01788"
+       height="334.13095"
+       x="-151.94643"
+       y="-50.648808"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:27.4219px;line-height:1.25;font-family:sans-serif;fill:#00ffff;fill-opacity:1;stroke:none;stroke-width:0.685547;"
+       x="75.795631"
+       y="9.5826054"
+       id="text12"
+       transform="scale(0.8663025,1.1543312)"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         x="75.795631"
+         y="9.5826054"
+         style="stroke-width:0.685547;fill:#00ffff;">Senses</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:22.8741px;line-height:1.25;font-family:sans-serif;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.571853;"
+       x="85.024734"
+       y="89.593521"
+       id="text16"
+       transform="scale(0.82620062,1.2103598)"><tspan
+         sodipodi:role="line"
+         id="tspan14"
+         x="85.024734"
+         y="89.593521"
+         style="stroke-width:0.571853;fill:#ffff00;">Memory</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:23.4957px;line-height:1.25;font-family:sans-serif;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:0.587394;"
+       x="82.725838"
+       y="168.18945"
+       id="text20"
+       transform="scale(0.74105737,1.3494232)"><tspan
+         sodipodi:role="line"
+         id="tspan18"
+         x="82.725838"
+         y="168.18945"
+         style="stroke-width:0.587394;fill:#00ff00;">Knowledge</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.662px;line-height:1.25;font-family:sans-serif;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.616552;"
+       x="269.83737"
+       y="122.27671"
+       id="text24"
+       transform="scale(0.76277267,1.3110066)"><tspan
+         sodipodi:role="line"
+         id="tspan22"
+         x="269.83737"
+         y="122.27671"
+         style="stroke-width:0.616552;fill:#ff0000;">Imagination</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:27.234px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.680851;"
+       x="-80.459831"
+       y="147.53229"
+       id="text28"
+       transform="scale(0.91360996,1.094559)"><tspan
+         sodipodi:role="line"
+         id="tspan26"
+         x="-80.459831"
+         y="147.53229"
+         style="stroke-width:0.680851;fill:#0000ff;">Action</tspan></text>
+    <path
+       style="fill:#ffff00;stroke:#000000;stroke-width:0.133764px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 105.61328,24.946429 V 55.940476 H 100.976 l 7.34236,23.434524 7.34235,-21.92262 -5.21694,-2.267856 0.19322,-30.238095 z"
+       id="path871"
+       sodipodi:nodetypes="cccccccc" />
+    <path
+       style="fill:#00ff00;stroke:#000000;stroke-width:0.133764px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 108.63709,128.5119 v 30.99405 h -4.63728 l 7.34236,23.43452 7.34235,-21.92262 -5.21694,-2.26785 0.19322,-30.2381 z"
+       id="path873"
+       sodipodi:nodetypes="cccccccc" />
+    <path
+       style="fill:#0000ff;stroke:#000000;stroke-width:0.133764px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 58.641673,113.49901 -27.434845,14.42082 -2.157621,-4.10476 -17.327183,17.40275 22.821364,-3.7009 -0.419902,-5.67303 26.855605,-13.89807 z"
+       id="path877"
+       sodipodi:nodetypes="cccccccc" />
+    <path
+       style="fill:#ffff00;stroke:#000000;stroke-width:0.133764px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -0.5967045,133.97653 27.5097465,-14.27743 2.136165,4.11597 17.417788,-17.31207 -22.840372,3.58173 0.390284,5.67515 -26.927786,13.7577 z"
+       id="path879"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:transform-center-x="-1.4603299"
+       inkscape:transform-center-y="0.75988933" />
+    <path
+       style="fill:#0000ff;stroke:#000000;stroke-width:0.133764px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 47.885985,214.313 -25.889611,-17.03992 2.549487,-3.87356 -23.61175789,-6.7507 14.27548389,18.18576 4.762526,-3.11094 25.151937,16.78571 z"
+       id="path881"
+       sodipodi:nodetypes="cccccccc" />
+    <path
+       style="fill:#00ff00;stroke:#000000;stroke-width:0.133764px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1.3152121,172.36449 25.8003229,17.17482 -2.569674,3.86021 23.576201,6.87385 -14.180368,-18.26003 -4.778703,3.08604 -25.0639779,-16.91676 z"
+       id="path883"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:transform-center-x="-0.60061858"
+       inkscape:transform-center-y="0.56755315" />
+    <path
+       style="fill:#ff0000;stroke:#000000;stroke-width:0.133764px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 170.02525,213.37041 22.02961,-21.802 3.26198,3.29603 11.49172,-21.70315 -20.74671,10.2022 2.05781,5.30331 -21.62822,21.13291 z"
+       id="path885"
+       sodipodi:nodetypes="cccccccc" />
+    <path
+       style="fill:#00ff00;stroke:#000000;stroke-width:0.133764px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 220.70468,176.49075 -22.14311,21.68672 -3.24473,-3.31303 -11.60486,21.64289 20.79969,-10.09378 -2.0301,-5.31398 21.73822,-21.01973 z"
+       id="path887"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:transform-center-x="0.96768011"
+       inkscape:transform-center-y="0.037349796" />
+    <path
+       style="fill:#ffff00;stroke:#000000;stroke-width:0.133764px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 202.20771,135.95716 -27.18257,-14.89089 2.22795,-4.06701 -24.08026,-4.81953 15.6991,16.97201 4.49542,-3.48581 26.42675,14.69716 z"
+       id="path889"
+       sodipodi:nodetypes="cccccccc" />
+    <path
+       style="fill:#ff0000;stroke:#000000;stroke-width:0.133764px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 152.39777,97.911345 27.10448,15.032585 -2.24916,4.05533 24.05479,4.94515 -15.61031,-17.05373 -4.51355,3.46231 -26.34968,-14.834899 z"
+       id="path891"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:transform-center-x="-0.8135981"
+       inkscape:transform-center-y="0.40459455" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="154.21428"
+       y="31.75"
+       id="text869"><tspan
+         sodipodi:role="line"
+         id="tspan867"
+         x="154.21428"
+         y="31.75"
+         style="fill:#ffff00;stroke-width:0.264583">Data from senses to memory for storage</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="167.06548"
+       y="81.64286"
+       id="text873"><tspan
+         sodipodi:role="line"
+         id="tspan871"
+         x="167.06548"
+         y="81.64286"
+         style="fill:#ff0000;stroke-width:0.264583">Data from  memory to imagination for </tspan><tspan
+         sodipodi:role="line"
+         x="167.06548"
+         y="94.871986"
+         style="fill:#ff0000;stroke-width:0.264583"
+         id="tspan875">processing</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="222.25"
+       y="115.66071"
+       id="text879"><tspan
+         sodipodi:role="line"
+         id="tspan877"
+         x="222.25"
+         y="115.66071"
+         style="fill:#ffff00;stroke-width:0.264583">Data not processed taken to </tspan><tspan
+         sodipodi:role="line"
+         x="222.25"
+         y="128.88983"
+         style="fill:#ffff00;stroke-width:0.264583"
+         id="tspan881">memory for storage</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="222.25"
+       y="188.98808"
+       id="text885"><tspan
+         sodipodi:role="line"
+         id="tspan883"
+         x="222.25"
+         y="188.98808"
+         style="fill:#00ff00;stroke-width:0.264583">Data processed by imagination</tspan><tspan
+         sodipodi:role="line"
+         x="222.25"
+         y="202.21721"
+         style="fill:#00ff00;stroke-width:0.264583"
+         id="tspan887">becomes knowledge</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="188.23215"
+       y="233.58928"
+       id="text891"><tspan
+         sodipodi:role="line"
+         id="tspan889"
+         x="188.23215"
+         y="233.58928"
+         style="fill:#ff0000;stroke-width:0.264583">Knowledge used by imagination to</tspan><tspan
+         sodipodi:role="line"
+         x="188.23215"
+         y="246.81841"
+         style="fill:#ff0000;stroke-width:0.264583"
+         id="tspan893">aid data processing</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-127.75595"
+       y="242.66072"
+       id="text897"><tspan
+         sodipodi:role="line"
+         id="tspan895"
+         x="-127.75595"
+         y="242.66072"
+         style="fill:#0000ff;stroke-width:0.264583">Knowledge used by action to aid</tspan><tspan
+         sodipodi:role="line"
+         x="-127.75595"
+         y="255.88985"
+         style="fill:#0000ff;stroke-width:0.264583"
+         id="tspan899">data processing</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-127.75595"
+       y="171.60118"
+       id="text903"><tspan
+         sodipodi:role="line"
+         id="tspan901"
+         x="-127.75595"
+         y="171.60118"
+         style="fill:#00ff00;stroke-width:0.264583">Data processed by </tspan><tspan
+         sodipodi:role="line"
+         x="-127.75595"
+         y="184.83031"
+         style="fill:#00ff00;stroke-width:0.264583"
+         id="tspan905">action becomes</tspan><tspan
+         sodipodi:role="line"
+         x="-127.75595"
+         y="198.05943"
+         style="fill:#00ff00;stroke-width:0.264583"
+         id="tspan907">knowledge</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-127.75595"
+       y="99.029755"
+       id="text911"><tspan
+         sodipodi:role="line"
+         x="-127.75595"
+         y="99.029755"
+         style="fill:#ffff00;stroke-width:0.264583"
+         id="tspan917">Data not processed </tspan><tspan
+         sodipodi:role="line"
+         x="-127.75595"
+         y="112.25888"
+         style="fill:#ffff00;stroke-width:0.264583"
+         id="tspan925">taken to memory for</tspan><tspan
+         sodipodi:role="line"
+         x="-127.75595"
+         y="125.48801"
+         style="fill:#ffff00;stroke-width:0.264583"
+         id="tspan927">storage</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-25.702381"
+       y="62.744045"
+       id="text931"><tspan
+         sodipodi:role="line"
+         id="tspan929"
+         x="-25.702381"
+         y="62.744045"
+         style="fill:#0000ff;stroke-width:0.264583">Data from memory to</tspan><tspan
+         sodipodi:role="line"
+         x="-25.702381"
+         y="75.973167"
+         style="fill:#0000ff;stroke-width:0.264583"
+         id="tspan933">action for processing</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text935"
+       style="fill:black;fill-opacity:1;line-height:1.25;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:10.58333336px;white-space:pre;shape-inside:url(#rect937);" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="129.26785"
+       y="136.82739"
+       id="text943"><tspan
+         sodipodi:role="line"
+         id="tspan941"
+         x="129.26785"
+         y="136.82739"
+         style="fill:#00ff00;stroke-width:0.264583">Direct</tspan><tspan
+         sodipodi:role="line"
+         x="129.26785"
+         y="150.05652"
+         style="fill:#00ff00;stroke-width:0.264583"
+         id="tspan945">transmutation</tspan><tspan
+         sodipodi:role="line"
+         x="129.26785"
+         y="163.28564"
+         style="fill:#00ff00;stroke-width:0.264583"
+         id="tspan947">of data to </tspan><tspan
+         sodipodi:role="line"
+         x="129.26785"
+         y="176.51477"
+         style="fill:#00ff00;stroke-width:0.264583"
+         id="tspan949">knowledge</tspan></text>
+  </g>
+</svg>
