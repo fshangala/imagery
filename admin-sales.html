@@ -7,6 +7,10 @@
 
     <!-- Imagery CSS -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <!--JQuery javascript-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!--Slick javascript-->
+    <script src="assets/slick/slick.min.js"></script>
 
     <title>Imagery</title>
   </head>
@@ -35,6 +39,7 @@
       <h1>Sales</h1>
       
       <hr>
+      <h3>Sale Requests</h3>
       <table class="table">
         <tr>
             <th>ID</th>
@@ -42,37 +47,92 @@
             <th>Plan</th>
             <th></th>
         </tr>
+        <tbody id="unapproved-sales">
+          <tr>
+            <td></td>
+            <td>Nothing to show</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <h3>Sale</h3>
+      <table class="table">
         <tr>
-            <td>1</td>
-            <td>Txn2003.27848.G4759</td>
-            <td>Plan ID</td>
-            <td>
-                <a href="">Approve</a>
-                <a href="">Decline</a>
-            </td>
+            <th>ID</th>
+            <th>Transaction ID</th>
+            <th>Plan</th>
+            <th></th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>Txn2003.27848.G4759</td>
-            <td>Plan ID</td>
-            <td>
-                <a href="">Approve</a>
-                <a href="">Decline</a>
-            </td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Txn2003.27848.G4759</td>
-            <td>Plan ID</td>
-            <td>
-                <a href="">Approve</a>
-                <a href="">Decline</a>
-            </td>
-        </tr>
+        <tbody id="approved-sales">
+          <tr>
+            <td></td>
+            <td>Nothing to show</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>
+    <script>
+    try{
+      var sales;
+      function render_sales(allsales){
+        var el1 = document.querySelector("#approved-sales");
+        var el0 = document.querySelector("#unapproved-sales");
+        el0.innerHTML = "";
+        el1.innerHTML = "";
+        for(var i=0;i<allsales.length;i++){
+          if(allsales[i].status=="unapproved"){
+            var tr = document.createElement("tr");
+            var td1 = document.createElement("td");
+            $(td1).text(allsales[i].id);
+            tr.append(td1);
+            var td2 = document.createElement("td");
+            $(td2).text(allsales[i].txnid);
+            tr.append(td2);
+            var td3 = document.createElement("td");
+            $(td3).text(allsales[i].plan_id);
+            tr.append(td3);
+            var td4 = document.createElement("td");
+            $(td4).html("<a href='/admin-approve-sale.html?&sale_id="+allsales[i].id+"'>View</a> <a href='admin-plan.html?plan_id="+allsales[i].id+"'>Decline</a>");
+            tr.append(td4);
 
+            el0.append(tr);
+          } else {
+            var tr = document.createElement("tr");
+            var td1 = document.createElement("td");
+            $(td1).text(allsales[i].id);
+            tr.append(td1);
+            var td2 = document.createElement("td");
+            $(td2).text(allsales[i].txnid);
+            tr.append(td2);
+            var td3 = document.createElement("td");
+            $(td3).text(allsales[i].plan_id);
+            tr.append(td3);
+            var td4 = document.createElement("td");
+            $(td4).html("<a href='/admin-approve-sale.html?&sale_id="+allsales[i].id+"'>View</a> <a href='admin-plan.html?plan_id="+allsales[i].id+"'>Decline</a>");
+            tr.append(td4);
+
+            el1.append(tr);
+          }
+        }
+      }
+      function get_sales(){
+        $.get("/api/sale.php?type=all", (data)=>{
+          sales = data;
+          render_sales(sales);
+        });
+      }
+      $(document).ready(()=>{
+        get_sales();
+      });
+    } catch(error){
+      console.log(error);
+    }
+    </script>
     <footer>
       <h2>Social Links</h2>
       <a href="#" class="btn">Facebook</a>

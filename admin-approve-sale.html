@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Imagery CSS -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <!--JQuery javascript-->
+    <script src="assets/js/jquery.min.js"></script>
+    <!--Slick javascript-->
+    <script src="assets/slick/slick.min.js"></script>
+
+    <title>Imagery</title>
+  </head>
+  <body>
+
+  <nav class="navbar">
+      <ul class="nav">
+          <li class="nav-item">
+            <a href="#" onclick="open_nav()" class="nav-link toggler">Menu</a>
+            <a href="#" onclick="open_nav_sm()" class="nav-link toggler-sm">Menu</a>
+          </li>
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      </ul>
+  </nav>
+
+  <div class="layout">
+    <div class="side-navbar">
+        <ul class="vnav">
+            <li class="nav-item"><a href="admin.html" class="nav-link">Dashboard</a></li>
+            <li class="nav-item"><a href="admin-sales.html" class="nav-link">Sales</a></li>
+            <li class="nav-item"><a href="admin-plans.html" class="nav-link">Plans</a></li>
+            <li class="nav-item"><a href="admin-slide.html" class="nav-link">Slides</a></li>
+        </ul>
+    </div>
+    <div class="main">
+      <h1>Sales</h1>
+      <a href="admin-sales.html" class="btn">Back</a>
+      <hr>
+        <div class="card">
+            <img src="assets/images/sunset-in-the-mountains.png" id="plan-picture">
+            <div class="body">
+                <form id="approve-form" action="api/sale.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="type" value="approve">
+                    <input type="hidden" name="sale_id" class="input-sale-id">
+                    <div class="input-group">
+                        <label>Amount</label>
+                        <input type="number" step="0.5" name="amount" class="form-control" placeholder="Enter the amount paid here" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="Enter the account name here" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Phone</label>
+                        <input type="text" name="phone" class="form-control" placeholder="Enter the phone number here" required>
+                    </div>
+                    <input type="submit" class="btn form-control" value="Approve"> 
+                </form>
+                <hr>
+                <ul class="list">
+                    <li class="item">ID: <span class="text-sale-id"></span></li>
+                    <li class="item">PHONE: <span class="text-sale-phone"></span></li>
+                    <li class="item">ALTERNATIVE PHONE: <span class="text-sale-alt_phone"></span></li>
+                    <li class="item">STATUS: <span class="text-sale-status"></span></li>
+                    <li class="item">ACCESS CODE: <span class="text-sale-access_code"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+    <script>
+    var sale_id = 0;
+    var url = location.search;
+    var paramstr = url.substring(1);
+    var paramarr = paramstr.split("&");
+    for(var i=0;i<paramarr.length;i++){
+      var arr = paramarr[i].split("=");
+      if(arr[0] == "sale_id"){
+        sale_id = arr[1];
+      }
+    }
+    if(sale_id == 0){
+      alert("No sale request to view! Navigating to sale requests page.");
+      location.assign("admin-sales.html");
+    }
+    $("#approve-form").hide();
+
+    function render_plan(plan){
+        document.querySelector("#plan-picture").src = plan.picture;
+    }
+    function get_plan(plan_id){
+        $.get("/api/plan.php?type=single&id="+plan_id, (data)=>{
+            render_plan(data);
+        });
+    }
+    function render_sale(sale){
+        $(".input-sale-id").val(sale.id);
+        if(sale.status!="approved"){
+            $("#approve-form").show();
+        }
+        $(".text-sale-id").text(sale.id);
+        $(".text-sale-phone").text(sale.phone);
+        $(".text-sale-alt_phone").text(sale.alt_phone);
+        $(".text-sale-status").text(sale.status);
+        $(".text-sale-access_code").text(sale.access_code);
+    }
+    function get_sale(){
+        $.get("/api/sale.php?type=single&id="+sale_id, (data)=>{
+            get_plan(data.plan_id);
+            render_sale(data);
+        });
+    }
+    $(document).ready(()=>{
+        get_sale();
+    });
+    </script>
+    <footer>
+      <h2>Social Links</h2>
+      <a href="#" class="btn">Facebook</a>
+      <a href="#" class="btn">Tweeter</a>
+      <a href="#" class="btn">YouTube</a>
+      <div class="bar">
+        &copy; Imagery 2021, proudly designed by <a href="https://linkedin.com/in/fshangala">fshangala</a>
+      </div>
+    </footer>
+
+    <!--Imagery javascript-->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
