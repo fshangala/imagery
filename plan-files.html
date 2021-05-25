@@ -83,8 +83,9 @@
           table.append(tr);
         }
       }
-      function get_plan_files(plan_id){
+      function get_plan_files(){
         $.get("/api/sale.php?type=plan_files&access_code="+access_code, (data)=>{
+          console.log(data);
           if(data.length==0){
               alert("No plan files available");
           } else {
@@ -130,15 +131,7 @@
             $(".text-sale-status").text(sale.status);
             $(".text-sale-access_code").text(sale.access_code);
         }
-
-      $.get("/api/sale.php?type=plan_files&access_code="+access_code, (data)=>{
-        if(data.hasOwnProperty("message")){
-            alert(data.message);
-            location.assign("plans.html");
-        } else {
-            get_plan_files();
-        }
-      });
+      get_plan_files();
       $.get("/api/sale.php?type=sale&access_code="+access_code, (data)=>{
         render_sale(data);
       });

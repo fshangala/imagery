@@ -40,10 +40,14 @@ if(isset($_GET["type"])){
     } elseif($type=="plan_files"){
         //api/sale.php?type=plan_files&access_code=any
         if($code_sale = $saleObj->get_where(["access_code"=>$_GET["access_code"]], false)){
-            if($plan_files = $fileObj->get_where(["plan_id"=>$code_sale["plan_id"]])){
-                echo json_encode($plan_files);
+            if($code_sale["status"]=="approved"){
+                if($plan_files = $fileObj->get_where(["plan_id"=>$code_sale["plan_id"]])){
+                    echo json_encode($plan_files);
+                } else {
+                    echo json_encode(["status"=>false, "message"=>"Error: ".$fileObj->error]);
+                }
             } else {
-                echo json_encode(["status"=>false, "message"=>"Error: ".$fileObj->error]);
+                echo json_encode(["status"=>false, "message"=>"Your payment has not been approved yet!"]);
             }
         } else {
             echo json_encode(["status"=>false, "message"=>"Wrong access code"]);
