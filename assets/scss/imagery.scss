@@ -56,6 +56,26 @@ img {
     width: 100%;
 }
 
+//page-loader
+.page-loader {
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    z-index: 1000;
+    background-color: $body-bg;
+    padding: 10px;
+    font-weight: 700;
+    animation-name: loading;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes loading {
+    0% {background-color: $body-bg;color: black;}
+    25% {background-color: $primary;color: white;}
+    75% {background-color: $secondary;color: black;}
+    100% {background-color: $body-bg;color: white;}
+}
+
 //navbar
 .navbar {
     background-color: $primary;

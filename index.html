@@ -16,7 +16,7 @@
     <title>Imagery</title>
   </head>
   <body>
-  
+    <div class="page-loader">Loading</div>
     <nav class="navbar">
         <ul class="nav">
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
@@ -189,6 +189,7 @@
     }
     $(document).ready(()=>{
       get_plans();
+      $(".page-loader").hide();
     });
     </script>
 
