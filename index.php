@@ -18,7 +18,7 @@ $slides = $slideObj->get_all();
       <center><h1>Featured Plans</h1></center>
       
       <div class="row" id="all-plans">
-      
+
       <?php
       foreach($featured as $plan){
           ?>
@@ -97,7 +97,7 @@ $slides = $slideObj->get_all();
 
     <footer>
       <div class="container">
-        <form action="plan-files.html" method="get">
+        <form action="plan-files.php" method="get">
             <div class="input-group">
                 <label>Access Code</label>
                 <input type="text" class="form-control" name="access_code" placeholder="Enter access code" required>
