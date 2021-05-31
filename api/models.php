@@ -6,6 +6,10 @@ class Plan extends Db {
         $this->table = "plan";
         $this->fields = ["description"=>"", "picture"=>"assets/images/plan-default.png", "price"=>0.0];
     }
+    function get_featured(){
+		$sql = "SELECT * FROM ".$this->table;
+		return $this->return_many($sql);
+    }
 }
 class PlanAttribute extends Db {
     function __init__() {
